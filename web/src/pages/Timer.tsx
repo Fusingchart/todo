@@ -20,6 +20,30 @@ export function Timer() {
 
       <section className="panel timer-panel">
         <div className="timer-main">
+          <div className="timer-current-task">
+            {currentTask ? (
+              <>
+                <div className="timer-current-label">Current task</div>
+                <div className="timer-current-name">{currentTask.name}</div>
+                {currentTaskGoal && (
+                  <div className="timer-current-goal">
+                    Goal: <span>{currentTaskGoal.name}</span>
+                  </div>
+                )}
+              </>
+            ) : suggestedTask ? (
+              <>
+                <div className="timer-current-label">Next suggested task</div>
+                <div className="timer-current-name">
+                  {suggestedTask.name}
+                </div>
+              </>
+            ) : (
+              <div className="timer-current-empty">
+                No task selected. Add tasks on the Tasks page.
+              </div>
+            )}
+          </div>
           <div className="timer-phase">
             {session.phase === 'work' ? 'Focus' : 'Break'}
           </div>
@@ -57,7 +81,6 @@ export function Timer() {
               Reset
             </button>
           </div>
-
           <div className="timer-meta">
             <div>
               Pomodoros this block:{' '}

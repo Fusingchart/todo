@@ -1,11 +1,14 @@
 .app {
-  max-width: 1120px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 3rem;
+  padding: 1.5rem 1.5rem 2.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .app-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -53,12 +56,41 @@
   background: #eef2ff;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.current-task-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.04);
+  color: #4b5563;
+  font-size: 0.8rem;
+}
+
+.current-task-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #22c55e;
+}
+
+.current-task-label strong {
+  font-weight: 600;
+  color: #111827;
+}
+
 .main {
-  min-height: 60vh;
+  flex: 1;
 }
 
 .page {
-  max-width: 720px;
+  width: 100%;
 }
 
 .page h2 {
@@ -134,8 +166,8 @@
 }
 
 .timer-page .timer-panel {
-  max-width: 420px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
 }
 
 .layout {
@@ -366,6 +398,41 @@ button.secondary:hover {
   flex-direction: column;
   gap: 0.75rem;
   align-items: center;
+}
+
+.timer-current-task {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.timer-current-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+  margin-bottom: 0.2rem;
+}
+
+.timer-current-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.timer-current-goal {
+  margin-top: 0.1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.timer-current-goal span {
+  color: #4f46e5;
+}
+
+.timer-current-empty {
+  font-size: 0.86rem;
+  color: #9ca3af;
 }
 
 .timer-phase {
