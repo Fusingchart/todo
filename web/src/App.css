@@ -6,17 +6,136 @@
 
 .app-header {
   margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .app-header h1 {
-  font-size: 2.3rem;
-  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+  margin: 0;
 }
 
-.app-subtitle {
-  margin: 0;
+.app-title {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.app-title:hover {
+  color: #4f46e5;
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav a {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: #6b7280;
-  font-size: 0.98rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav a:hover {
+  color: #111827;
+  background: #e5e7eb;
+}
+
+.nav a.active {
+  color: #4f46e5;
+  background: #eef2ff;
+}
+
+.main {
+  min-height: 60vh;
+}
+
+.page {
+  max-width: 720px;
+}
+
+.page h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.25rem;
+}
+
+.page-subtitle {
+  margin: 0 0 1.5rem;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.dashboard-card .stat {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.dashboard-card .stat-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.dashboard-card .suggested {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.link-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4f46e5;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.link-btn:hover {
+  color: #4338ca;
+}
+
+.link-btn.primary {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+}
+
+.link-btn.primary:hover {
+  filter: brightness(1.05);
+  color: white;
+}
+
+.timer-page .timer-panel {
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .layout {

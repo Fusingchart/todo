@@ -12,9 +12,10 @@ State (goals, tasks, and the timer session) is stored in `localStorage`, so your
 ### Project layout
 
 - `web/` – Vite + React + TypeScript app
-  - `src/App.tsx` – main UI and scheduling/timer logic
-  - `src/App.css` – layout and component styling
-  - `src/index.css` – global styles
+  - `src/App.tsx` – router and app shell
+  - `src/context/AppState.tsx` – shared state and timer logic
+  - `src/pages/` – Home, Goals, Tasks, Timer pages
+  - `src/components/Layout.tsx` – layout with navigation
 
 ### Running the app
 
@@ -30,17 +31,19 @@ Then open the printed `http://localhost:...` URL in your browser.
 
 ### How to use
 
+The app has four pages: **Home** (dashboard), **Goals**, **Tasks**, and **Timer**. Use the nav bar to switch between them.
+
 1. **Create long-term goals**
-   - In the **Goals** panel, enter a goal name and a target number of hours.
+   - Go to the **Goals** page and enter a goal name and a target number of hours.
    - Each completed Pomodoro (25 minutes of focus) automatically adds 25 minutes to the linked goal.
 
 2. **Create today’s 1‑hour tasks**
-   - In **Today’s 1‑hour tasks**, add tasks for **today**.
+   - Go to the **Tasks** page and add tasks for **today**.
    - Optionally link each task to one of your goals.
    - Each task is assumed to require **1 hour** (2 Pomodoros) to “complete”.
 
 3. **Follow the Pomodoro timer**
-   - The **Pomodoro timer** panel shows:
+   - Go to the **Timer** page. It shows:
      - The current phase: **Focus** or **Break**
      - The remaining time in the current phase
      - The **current task** and its linked goal (if any)
@@ -54,7 +57,7 @@ Then open the printed `http://localhost:...` URL in your browser.
      - Can automatically select the next best task for you (based on which goals are most behind).
 
 4. **Choosing tasks**
-   - You can manually click a task in the list to make it the **current** task.
+   - On the **Tasks** page, click a task to make it the **current** task.
    - When idle, the app shows a **suggested next task** according to your goal progress.
 
 ### Notes
